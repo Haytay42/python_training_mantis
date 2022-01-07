@@ -22,15 +22,15 @@ for o, a in opts:
     elif o == "-f":
         f = a
 
-
-def random_status():
-    status = ['development', 'release', 'stable', 'obsolete']
-    return "".join([random.choice(status)])
-
-
-def random_view_status():
-    view_status = ['public', 'private']
-    return "".join([random.choice(view_status)])
+#
+# def random_status():
+#     status = ['development', 'release', 'stable', 'obsolete']
+#     return "".join([random.choice(status)])
+#
+#
+# def random_view_status():
+#     view_status = ['public', 'private']
+#     return "".join([random.choice(view_status)])
 
 
 def random_string(prefix, maxlen):
@@ -39,8 +39,7 @@ def random_string(prefix, maxlen):
 
 
 testdata = [
-    Project(name=random_string("name1", 10), status=random_status(), view_status=random_view_status(),
-            description=random_string("description", 15))
+    Project(name=random_string("name1", 10), description=random_string("description", 15))
     for i in range(n)
 ]
 
