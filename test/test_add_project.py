@@ -2,10 +2,9 @@
 
 def test_add_project(app, json_projects):
     project = json_projects
-    config = app.config['web']
-    old_projects = app.soap.get_projects(config['username'], config['password'])
+    old_projects = app.soap.get_projects(app)
     app.project.add_new_project(project)
-    new_projects = app.soap.get_projects(config['username'], config['password'])
+    new_projects = app.soap.get_projects(app)
     flag = app.project.add_new_project(project)
     if flag:
         old_projects.append(json_projects)
